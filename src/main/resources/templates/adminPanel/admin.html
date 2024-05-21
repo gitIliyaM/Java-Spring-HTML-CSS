@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${Title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="adminPanel/header :: header"></header>
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-10 col-md-8 mx-auto">
+                <h1 class="fw-light">Главная страница Администратора</h1>
+                <p class="lead text-body-secondary">
+                    Административная панель управления Базой данных.
+                </p>
+                <div class="container mt-2">
+                    <h2>Выберите действие</h2>
+                    <form method="get" action="/verify">
+                        <label class="form-control">
+                            <input type="text" name="login" placeholder="введите логин" class="form-control"><br>
+                            <input type="password" name="password" placeholder="введите пароль" class="form-control"><br>
+                        </label>
+                        <button type="submit" name="button" value="html" class="btn btn-primary my-2">HTML</button>
+                        <button type="submit" name="button" value="json" class="btn btn-secondary my-2">JSON</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

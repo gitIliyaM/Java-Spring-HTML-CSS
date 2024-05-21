@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${Title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-10 col-md-8 mx-auto">
+                <h1 class="fw-light">Главная страница Wallet</h1>
+                <p class="lead text-body-secondary">
+                    У нас можно создать ЛК для вашего кошелька с уникальным UUID, логином и паролем, внести денежные средства
+                    или их списать с кошелька.
+                </p>
+                <p>
+                    <a th:href="${access}" th:text="${accessText}" th:class="${accessCSS}"/>
+                    <a th:href="${auth}" th:text="${authText}" th:class="${authCSS}"/>
+                    <a th:href="${regis}" th:text="${regisText}" th:class="${regisCSS}"/>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
